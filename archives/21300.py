@@ -1,0 +1,1 @@
+print(sum(map(lambda x : x * 5, list(map(int, input().split())))))
