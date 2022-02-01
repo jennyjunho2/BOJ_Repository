@@ -1,3 +1,7 @@
+# product를 이용하여 경우의 수로 풀긴했지만, Python3의 경우 메모리 터짐
+# repeat에 대한 고찰 필요
+# 그냥 1~500000까지 돌려서 할 수도 있었음
+
 import sys
 input = sys.stdin.readline
 
