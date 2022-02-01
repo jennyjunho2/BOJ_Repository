@@ -1,3 +1,5 @@
+# - 이후의 모든 수들은 음수로 만들어 버릴 수 있음
+
 import sys
 input = sys.stdin.readline
 
