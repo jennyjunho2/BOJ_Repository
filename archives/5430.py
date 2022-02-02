@@ -1,3 +1,5 @@
+# 극단적인 테스트 케이스 항상 생각하자.
+
 import sys
 input = sys.stdin.readline
 
