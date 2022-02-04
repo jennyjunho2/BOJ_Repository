@@ -1,0 +1,4 @@
+새로 배운 놈들
+
+220204
+- Longest Common Sequence(17218)
