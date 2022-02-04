@@ -1,4 +1,6 @@
-새로 배운 놈들
+새로 배운/복습한 알고리즘들
 
 220204
 - Longest Common Sequence(17218)
+- PriorityQueue(11279)
+- Heapq(7662)
