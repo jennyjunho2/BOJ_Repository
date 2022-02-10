@@ -1,22 +1,20 @@
 import sys
 input = sys.stdin.readline
 
-import heapq
-def solution():
-    N = int(input())
-    if N == 1:
-        print(int(input()))
-        return
-    
-    nums = sorted([int(input()) for _ in range(N)])
-    cnt = 0
-    while len(nums) != 1:
-        a = heapq.heappop(nums)
-        b = heapq.heappop(nums)
-        heapq.heappush(nums, a+b)
-        cnt += (a+b)
-    print(cnt)
-    return
+def primes(num):
+    sieve = [False, False] + [True] * (num - 1)
+    for i in range(2, int(num**0.5) + 1):
+        if sieve[i]:
+            for j in range(2*i, num, i):
+                sieve[j] = False
+    return list(filter(lambda x : x % 2 != 0, [idx for idx, x in enumerate(sieve) if x]))
 
-if __name__ == "__main__":
-    solution()
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    prime = primes(n)
+    for b in prime:
+        if n - b in prime:
+            print(f"{n} = {b} + {n-b}")
+            break
