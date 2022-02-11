@@ -1,0 +1,1 @@
+print("dogdriip"[-5:])
