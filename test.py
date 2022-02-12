@@ -1,1 +1,0 @@
-print("dogdriip"[-5:])

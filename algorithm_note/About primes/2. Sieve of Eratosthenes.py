@@ -44,6 +44,7 @@ def sieve_of_eratosthenes_variation(num):
 # i + j + 2ij <= N인 모든 i + j + 2ij 수를 제거하고
 # 남은 수에 대해 2를 곱하고 1을 더해서 2N + 2 이하의
 # 홀수 소수 리스트를 도출
+# 그러나 느려서 사용하지 않는다.
 def sieve_of_sundaram(num):
     num = (num // 2 - 1)
     sieve = [False] + [True] * (num)
@@ -60,4 +61,3 @@ def sieve_of_sundaram(num):
 # print(sieve_of_eratosthenes(20))
 # print(sieve_of_eratosthenes2(20))
 # print(sieve_of_sundaram(20))
-print(sieve_of_sundaram(11))
