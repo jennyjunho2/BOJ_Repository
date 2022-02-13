@@ -11,7 +11,10 @@ def find_parent(parent, x):
 def union_parent(parent, a, b):
     a = find_parent(parent, a)
     b = find_parent(parent, b)
-    parent[a] = b if a < b else parent[b] = a
+    if a < b:
+        parent[a] = b 
+    else:
+        parent[b] = a
 
 # v : 노드의 개수
 # e : 간선(Union 연산)의 개수
