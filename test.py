@@ -1,1 +1,1 @@
-print(1089**0.5)
+print("abcdef"[:-2])
