@@ -38,3 +38,6 @@
 
 220213
 - LIS(Longest Increasing Sequence w/ O(nlogn))(11053)
+
+220214
+- 진법변환 꿀팁(11005)
