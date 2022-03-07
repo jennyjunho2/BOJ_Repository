@@ -15,3 +15,8 @@ vector<string> split(string str, char Delimiter) {
 
     return result;
 }
+
+// 유클리드 호제법
+int gcd(const int& a, const int& b) {
+    return a&b ? gcd(b, a%b) : b;
+}
