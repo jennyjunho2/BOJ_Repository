@@ -1,4 +1,5 @@
 import sys
 input = sys.stdin.readline
 
-print("Hello!")
+A, B = map(int, input().split())
+print(A**2-B**2)
