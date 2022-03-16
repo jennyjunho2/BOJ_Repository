@@ -7,10 +7,12 @@ using namespace std;
 using ll = long long;
 //-------------------------------------
 
+int N, M;
+
 int main() {
     fastio
 
-    
+    cin >> N >> M;
 
     return 0;
 }
