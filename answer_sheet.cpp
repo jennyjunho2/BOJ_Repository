@@ -7,12 +7,10 @@ using namespace std;
 using ll = long long;
 //-------------------------------------
 
-
-
 int main() {
     fastio
 
-    
+    cout << "Hello world!" << endl;
 
     return 0;
 }
