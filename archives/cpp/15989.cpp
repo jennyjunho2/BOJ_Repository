@@ -6,24 +6,25 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
-#define MOD 1000000009
-ll dp[100001][2];
+
+ll dp[10001][4];
 
 int main() {
     fastio
 
-    dp[1][0] = 1;
-    dp[2][0] = 1; dp[2][1] = 1;
-    dp[3][0] = 2; dp[3][1] = 2;
-    FOR(i, 4, 100001) {
-        dp[i][0] = (dp[i-1][1]+dp[i-2][1]+dp[i-3][1]) % MOD;
-        dp[i][1] = (dp[i-1][0]+dp[i-2][0]+dp[i-3][0]) % MOD;
+    dp[1][1] = 1; dp[1][2] = 0; dp[1][3] = 0;
+    dp[2][1] = 1; dp[2][2] = 1; dp[2][3] = 0;
+    dp[3][1] = 1; dp[3][2] = 1; dp[3][3] = 1;
+    FOR(i, 4, 10001) {
+        dp[i][1] = dp[i-1][1];
+        dp[i][2] = dp[i-2][2] + dp[i-2][1];
+        dp[i][3] = dp[i-3][1] + dp[i-3][2] + dp[i-3][3];
     }
 
     int T; cin >> T;
     while (T--) {
         int n; cin >> n;
-        cout << dp[n][0] << ' ' << dp[n][1] << endl;
+        cout << dp[n][1] + dp[n][2] + dp[n][3] << endl;
     }
 
     return 0;
