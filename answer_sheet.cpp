@@ -8,51 +8,56 @@ using namespace std;
 using ll = long long;
 //-------------------------------------
 using p = pair<int, int>;
-int N;
-vector<int> graph[100001];
-queue<int> q;
-queue<int> new_q;
-int order[100001];
+int N, K;
+int min_sec = -1;
+int min_sec_cnt = 0;
+bool visited[100001];
 
-bool cmp(const int& x, const int& y) {
-    return order[x] < order[y];
+void bfs(int start) {
+    queue<p> q;
+    q.push({start, 0});
+    visited[start] = true;
+
+    while (!q.empty()) {
+        int pos = q.front().first;
+        int sec = q.front().second;
+        q.pop();
+
+        visited[pos] = true;
+
+        if (pos == K) {
+            if (min_sec = -1) {
+                min_sec = sec;
+                min_sec_cnt++;
+            } else {
+                if (sec == min_sec) {
+                    min_sec_cnt++;
+                }
+            }
+            visited[pos] = false;
+            continue;
+        }
+
+        if (pos+1 >= 0 && pos+1 <= 100000 && !visited[pos+1]) {
+            q.push({pos+1, sec+1});
+        }
+
+        if (pos-1 >= 0 && pos+1 <= 100000 && !visited[pos-1]) {
+            q.push({pos-1, sec+1});
+        }
+
+        if (pos*2 >= 0 && pos*2 <= 100000 && !visited[pos*2]) {
+            q.push({pos*2, sec+1});
+        }
+    }
 }
 
 int main() {
     fastio
     
-    cin >> N;
-    FOR(i, 0, N-1) {
-        int a, b; cin >> a >> b;
-        graph[a].push_back(b);
-        graph[b].push_back(a);
-    }
-
-    FOR(i, 1, N+1) {
-        int temp; cin >> temp;
-        q.push(temp);
-        order[temp] = i;
-    }
-
-    FOR(i, 1, N+1) {
-        stable_sort(graph[i].begin(), graph[i].end(), cmp);
-    }
-
-    new_q.push(1);
-    q.pop();
-    while (!new_q.empty()) {
-        int temp = new_q.front();
-        new_q.pop();
-
-        for (auto i: graph[temp]) {
-            if (i == q.front()) {
-                new_q.push(q.front());
-                q.pop();
-            }
-        }
-    }
-
-    cout << (q.empty() ? 1 : 0);
+    cin >> N >> K;
+    bfs(N);
+    cout << min_sec << endl << min_sec_cnt;
 
     return 0;
 } 
