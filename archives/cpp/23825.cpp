@@ -8,9 +8,11 @@ using namespace std;
 using ll = long long;
 //-------------------------------------
 
-int main() { fastio
-
+int main() {
+    fastio
     
+    int N, M; cin >> N >> M;
+    cout << min(N/2, M/2);
 
     return 0;
 } 

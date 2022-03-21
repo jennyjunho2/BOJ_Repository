@@ -8,9 +8,19 @@ using namespace std;
 using ll = long long;
 //-------------------------------------
 
-int main() { fastio
+int main() {
+    fastio
 
-    
+    int T; cin >> T;
+    FOR(i, 1, T+1) {
+        int N; cin >> N;
+        int A, B; cin >> A >> B;
+        while (N--) {
+            int u, v; cin >> u >> v;
+        }
+        cout << "Material Management " << i << endl;
+        cout << "Classification ---- End!" << endl;
+    }
 
     return 0;
 } 

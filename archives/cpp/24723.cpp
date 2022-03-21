@@ -8,9 +8,16 @@ using namespace std;
 using ll = long long;
 //-------------------------------------
 
-int main() { fastio
+int main() {
+    fastio
 
+    int N; cin >> N;
+    int ans = 1;
+    FOR(i, 0, N) {
+        ans *= 2;
+    } 
     
+    cout << ans;
 
     return 0;
 } 
