@@ -16,15 +16,9 @@ struct edge {
     }
 };
 
-struct cmp {
-    bool operator()(const edge& a, const edge& b) {
-        return a.cost > b.cost;
-    }
-};
-
-int N, M;
-priority_queue<edge, vector<edge>, cmp> graph;
-int parent[1001];
+int V, E;
+vector<edge> graph;
+int parent[10001];
 
 int find(int node) {
     if (node == parent[node]) { return node; }
@@ -37,22 +31,24 @@ void merge(int node_a, int node_b) {
     parent[node_b] = node_a;
 }
 
-
+bool cmp(const edge& a, const edge& b) {
+    return a.cost < b.cost;
+}
 
 int main() { fastio
 
-    cin >> N >> M;
-    FOR(i, 0, M) {
+    cin >> V >> E;
+    FOR(i, 0, E) {
         int a, b, c; cin >> a >> b >> c;
-        graph.push(edge(a, b, c));
+        graph.push_back(edge(a, b, c));
     }
 
-    FOR(i, 1, N+1) { parent[i] = i; }
+    FOR(i, 1, V+1) { parent[i] = i; }
+
+    sort(graph.begin(), graph.end(), cmp);
 
     ll ans = 0;
-    while (!graph.empty()){
-        edge i = graph.top();
-        graph.pop();
+    for (auto i: graph) {
         if (find(i.start) != find(i.end)) {
             merge(i.start, i.end);
             ans += i.cost;
