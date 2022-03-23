@@ -7,59 +7,29 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
+// https://www.acmicpc.net/problem/2887
+int N;
+struct pos{
+    int x, y, z;
+    pos(int _x, int _y, int _z) : x(_x), y(_y), z(_z) {};
+};
+
 struct edge {
-    int start, end, cost;
-    edge(int start, int end, int cost) {
-        this->start = start;
-        this->end = end;
-        this->cost = cost;
-    }
+    pos start, end; int cost;
+    edge(pos _start, pos _end, int _cost) : start(_start), end(_end), cost(_cost) {};
 };
 
-struct cmp {
-    bool operator()(const edge& a, const edge& b) {
-        return a.cost > b.cost;
-    }
-};
-
-int N, M;
-priority_queue<edge, vector<edge>, cmp> graph;
-int parent[1001];
-
-int find(int node) {
-    if (node == parent[node]) { return node; }
-    return parent[node] = find(parent[node]);
+int dist(const pos& a, const pos& b) {
+    return min({abs(a.x - b.x), abs(a.y - b.y), abs(a.z - b.z)});
 }
 
-void merge(int node_a, int node_b) {
-    node_a = find(node_a);
-    node_b = find(node_b);
-    parent[node_b] = node_a;
+bool cmp_cost(const edge& a, const edge& b) {
+    return a.cost > b.cost;
 }
-
-
 
 int main() { fastio
 
-    cin >> N >> M;
-    FOR(i, 0, M) {
-        int a, b, c; cin >> a >> b >> c;
-        graph.push(edge(a, b, c));
-    }
-
-    FOR(i, 1, N+1) { parent[i] = i; }
-
-    ll ans = 0;
-    while (!graph.empty()){
-        edge i = graph.top();
-        graph.pop();
-        if (find(i.start) != find(i.end)) {
-            merge(i.start, i.end);
-            ans += i.cost;
-        }
-    }
-
-    cout << ans;
+    
 
     return 0;
 } 
