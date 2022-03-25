@@ -7,10 +7,24 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
+int N, K;
+vector<int> nums;
 
 int main() { fastio
 
-    
+    cin >> N >> K;
+    nums.resize(N);
+    FOR(i, 0, N) { cin >> nums[i]; }
+    int max_sum = -10000000;
+    FOR(i, 0, N-K+1) {
+        int sum = 0;
+        FOR(j, i, i+K) {
+            sum += nums[j];
+        }
+        max_sum = max(max_sum, sum);
+    }
+
+    cout << max_sum;
 
     return 0;
 }
