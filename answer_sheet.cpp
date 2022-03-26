@@ -8,12 +8,9 @@ using namespace std;
 using ll = long long;
 //-------------------------------------
 
-// https://www.acmicpc.net/workbook/view/10782
-// https://www.acmicpc.net/problem/20040
-
 int main() { fastio
 
     
 
     return 0;
-}
+} 
