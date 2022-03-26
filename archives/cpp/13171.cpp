@@ -7,26 +7,24 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
+using ull = unsigned long long;
 #define MOD 1000000007
-using mat = vector<vector<int>>;
+ull A, X;
 
-ll gcd(const ll& a, const ll& b) {
-    return b == 0 ? a : gcd(b, a%b);
-}
+int main() { fastio
 
-int main() {
-    fastio
-
-    ll n, m; cin >> n >> m;
-    ll GCD = gcd(n, m);
-    ll exp = GCD - 1;
-    while (exp) {
-        if (exp & 1) {
-            ll temp[2][2];
-            memset(temp, 0, sizeof(temp));
-
+    cin >> A >> X;
+    ull base = A % MOD;
+    ull ans = 1;
+    while (X) {
+        if (X & 1) {
+            ans = ans * base % MOD;
         }
+        base = base*base % MOD;
+        X >>= 1;
     }
 
+    cout << ans;
+    
     return 0;
-}
+} 
