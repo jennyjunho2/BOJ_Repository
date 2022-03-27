@@ -10,7 +10,7 @@ using ll = long long;
 
 int main() {fastio
 
-    
+    cout << "고려대학교";
 
     return 0;
 }

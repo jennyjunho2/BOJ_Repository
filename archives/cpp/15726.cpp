@@ -8,9 +8,13 @@ using namespace std;
 using ll = long long;
 //-------------------------------------
 
-int main() {fastio
+int main() {
+    fastio
 
-    
+    ll A, B, C; cin >> A >> B >> C;
+    ll x = (double)(A*B)/C;
+    ll y = ((double)A/B)*C;
+    cout << (x>y ? x : y);
 
     return 0;
 }
