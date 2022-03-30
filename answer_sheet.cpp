@@ -7,6 +7,7 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
+<<<<<<< HEAD
 using p = pair<int, int>;
 int R, C;
 char graph[1500][1500];
@@ -101,6 +102,73 @@ int main() {fastio
     }
 
     cout << days;
+=======
+// https://www.acmicpc.net/problem/2733
+int memory[256];
+
+int main() {fastio
+    
+    string T; getline(cin, T);
+    FOR(i, 1, stoi(T)+1) {
+        string ans = "";
+        string com = "";
+        stack<char> s;
+        memset(memory, 0, sizeof(memory));
+        int ptr = 0;
+        while (true) {
+            string S; getline(cin, S);
+            if (S == "end") { break;}
+
+            for (char c: S) {
+                if (c == '%') { break; }
+                com += c;
+            }
+        }
+        cout << com << endl;
+        int com_size = com.size();
+        FOR(j, 0, com_size) {
+            char ch = com[j];
+            if (ch == '>') {
+                ptr = (ptr == 32767 ? 0 : ptr+1);
+            }
+            else if (ch == '<') {
+                ptr = (ptr == 0 ? 32767 : ptr-1);
+            }
+            else if (ch == '+') {
+                memory[ptr] = (memory[ptr] == 255 ? 0 : memory[ptr]+1);
+            }
+            else if (ch == '-') {
+                memory[ptr] = (memory[ptr] == 0 ? 255 : memory[ptr]-1);
+            }
+            else if (ch == '.') {
+                ans += char(memory[ptr]);
+            }
+            else if (ch == '[') {
+                s.push('[');
+                if (memory[ptr] == 0) {
+                    while(com[j] != ']') {
+                        j++;
+                    }
+                }
+            }
+            else if (ch == ']') {
+                s.pop();
+                if (memory[ptr] != 0) {
+                    while(com[j] != '[') {
+                        j--;
+                    }
+                }
+            }
+        }
+        cout << "PROGRAM #" << i << ":" << endl;
+        if (!s.empty()) {
+            cout << "COMPILE ERROR" << endl;
+        } else {
+            cout << ans << endl;
+        }
+    }
+
+>>>>>>> 3da1784ef669631b9884652502e303a582ed3954
 
     return 0;
 }
