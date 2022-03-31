@@ -10,7 +10,7 @@ using ll = long long;
 
 int main() {fastio
     
-    cout << "HEllo!"
+    cout << "HEllo!";
 
     return 0;
 }
