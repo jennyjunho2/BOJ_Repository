@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 #define FOR(i, start, end) for (int i = start; i < end; i++)
 #define endl "\n"
-#define INT_INF 2147483647;
 using namespace std;
 
 double distance(int x1, int x2, int y1, int y2) {

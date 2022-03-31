@@ -9,13 +9,12 @@ using ll = long long;
 //-------------------------------------
 #define INF int(1e9);
 int N;
-vector<int> nums;
 vector<int> LIS;
 
 int main() {fastio
 
     cin >> N;
-    nums.resize(N);
+
     LIS.push_back(INT_MIN);
 
     int temp;

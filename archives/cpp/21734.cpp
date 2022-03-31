@@ -10,7 +10,19 @@ using ll = long long;
 
 int main() {fastio
     
-    
+    string S; cin >> S;
+    for (char ch: S) {
+        int ascii = ch;
+        int sum = 0;
+        for (char ch2: to_string(ascii)) {
+            sum += (ch2 - '0');
+        }
+
+        FOR(i, 0, sum) {
+            cout << ch;
+        }
+        cout << endl;
+    }
 
     return 0;
 }

@@ -6,11 +6,9 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    string str;
-    getline(cin, str);
+    string str; getline(cin, str);
     int str_length = str.length();
     int cnt = 1;
-    bool isSpace = false;
 
     if (str.empty()) {
         cout << "0";
@@ -23,14 +21,11 @@ int main() {
         }
     }
     
-    if (str[0] == ' '){
-        cnt--;
-    }
-    if (str[str_length - 1] == ' '){
-        cnt--;
-    }
+    if (str[0] == ' '){ cnt--; }
 
-    std::cout << cnt << "\n";
+    if (str[str_length - 1] == ' '){ cnt--; }
+
+    cout << cnt << "\n";
 
     return 0;
 }
