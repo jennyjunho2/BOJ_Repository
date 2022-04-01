@@ -15,6 +15,7 @@ bool visited[5001];
 
 int main() {fastio
     
+<<<<<<< HEAD
     cin >> N >> Q;
     FOR(i, 0, N-1) {
         int start, end, cost; cin >> start >> end >> cost;
@@ -55,6 +56,9 @@ int main() {fastio
 
         cout << ans << endl;
     }
+=======
+    
+>>>>>>> e3092616988601228b7ff34bb36b8ae97fc3e779
 
     return 0;
 }
