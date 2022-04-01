@@ -1,28 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int table[26] = {0, };
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
 
-    string word;
-    int table[26] = {0, };
-
-    cin >> word;
-    int word_length = word.length();
+    string word; cin >> word;
     int idx = 0;
     
-    for (int i = 0; i < word_length; i++) {
-        idx = word[i];
-        // if uppercase
-        if (idx < 97) { idx -= 65;}
-        // not uppercase
-        else { idx -= 97;}
-
-        table[idx]++;
+    for (char ch: word) {
+        if (ch >= 'a') {
+            table[ch-'a']++;
+        } else {
+            table[ch-'A']++;
+        }
     }
-
+    
     int result = -1;
     bool same = false;
 
