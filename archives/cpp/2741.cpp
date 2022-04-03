@@ -9,7 +9,7 @@ int main() {
     int N;
     cin >> N;
     for (int i = 1; i <= N; i++){
-        cout << N << " * " << i << " = " << N*i << "\n";
+        cout << i << "\n";
     }
 
     return 0;

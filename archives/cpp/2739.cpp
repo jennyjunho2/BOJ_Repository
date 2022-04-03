@@ -6,13 +6,10 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int N; cin >> N;
-
-    for (int i = 1; i <= N; i++){
-        for (int j = 1; j <= i; j++){
-            cout << "*";
-        }
-        cout << "\n";
+    int N;
+    cin >> N;
+    for (int i = 1; i <= 9; i++){
+        cout << N << " * " << i << " = " << N*i << "\n";
     }
 
     return 0;

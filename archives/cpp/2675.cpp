@@ -6,12 +6,9 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int T;
-    cin >> T;
+    int T; cin >> T;
     while (T--){
-        int R;
-        string S;
-        cin >> R >> S;
+        int R; string S; cin >> R >> S;
         int S_len = S.length();
         for (int i = 0; i < S_len; i++){
             for (int j = 0; j < R; j++){

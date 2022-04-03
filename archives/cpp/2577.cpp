@@ -11,7 +11,7 @@ int main() {
     int result = A * B * C;
     int table[10] = {0, };
 
-    for (int i = 0; result > 0; i++){
+    while (result > 0){
         temp = result % 10;
         table[temp]++;
         result /= 10;
