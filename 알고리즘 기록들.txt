@@ -78,3 +78,7 @@
 
 220331
 - MITM(Meet In The Middle) (7453)
+
+220405
+- 플로이드의 역추적 / 다익스트라의 역추적
+- Union-find의 응용 => path compression.

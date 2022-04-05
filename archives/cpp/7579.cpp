@@ -7,7 +7,6 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
-// https://www.acmicpc.net/problem/7579
 int N, M;
 int memory[101];
 int cost[101];
