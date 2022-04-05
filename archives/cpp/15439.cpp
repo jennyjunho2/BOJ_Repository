@@ -10,7 +10,8 @@ using ll = long long;
 
 int main() {fastio
 
-    
+    int N; cin >> N;
+    cout << N*(N-1);
 
     return 0;
 }

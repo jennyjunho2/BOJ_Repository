@@ -3,7 +3,7 @@ using namespace std;
 
 int reversed(int& num){
     int result = 0;
-    for (int i = 0; num > 0; i++){
+    while (num > 0) {
         result = result * 10 + num % 10;
         num /= 10;
     }

@@ -6,8 +6,7 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int H, M;
-    cin >> H >> M;
+    int H, M; cin >> H >> M;
     if (M < 45) {
         M += 15;
         H--;
@@ -19,5 +18,5 @@ int main() {
         H += 24;
     }
 
-    cout << H  << ' '<< M;
+    cout << H  << ' ' << M;
 }

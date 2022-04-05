@@ -6,14 +6,11 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    set<int> table;
-    int cnt = 10;
-    while (cnt--){
-        int num; cin >> num;
-        table.insert(num % 42);
+    int N;
+    cin >> N;
+    for (int i = N; i >= 1; i--){
+        cout << i << "\n";
     }
-
-    cout << table.size();
 
     return 0;
 }

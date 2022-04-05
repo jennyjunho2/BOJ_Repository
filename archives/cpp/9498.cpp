@@ -6,8 +6,7 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int score;
-    cin >> score;
+    int score; cin >> score;
     if (score >= 90) {
         cout << 'A';
     } else if (score >= 80) {
