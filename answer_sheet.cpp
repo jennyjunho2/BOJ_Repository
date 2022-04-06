@@ -1,4 +1,4 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 #define TC int (_T); cin >> _T; while (_T--)
 #define FOR(i, start, end) for (int i = start; i < end; i++)
 #define endl "\n"
@@ -7,50 +7,38 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
-// https://www.acmicpc.net/problem/2568
-using p = pair<int, int>;
-int N;
-vector<p> nums;
-int dp[100001];
-vector<int> v, LIS_exclude;
+int nums[100][100];
+ll dp[100][100];
 
-int main() {fastio
+int main() {
+    fastio
 
-    cin >> N; nums.resize(N);
+    int N; cin >> N;
     FOR(i, 0, N) {
-        cin >> nums[i].first >> nums[i].second;
-    }
-
-    sort(nums.begin(), nums.end());
-
-    v.push_back(nums[0].second);
-    FOR(i, 1, N) {
-        int temp = nums[i].second;
-        if (temp > v.back()) {
-            v.push_back(temp);
-            dp[i] = v.size()-1;
-        } else {
-            auto it = lower_bound(v.begin(), v.end(), temp);
-            *it = temp;
-            dp[i] = it - v.begin();
+        FOR(j, 0, N) {
+            cin >> nums[i][j];
         }
     }
 
-    int cnt = v.size();
-    cout << N - cnt << endl;
-    cnt--;
-    for (int i = N-1; i >= 0; i--) {
-        if (dp[i] == cnt) {
-            cnt--;
-            continue;
+    dp[0][0] = 1;
+    FOR(i, 0, N) {
+        FOR(j, 0, N) {
+            ll dp_temp = dp[i][j];
+            int jump = nums[i][j];
+            if (dp_temp == 0 || (i == N-1 && j == N-1)) {
+                continue;
+            }
+            if (i+jump < N) {
+                dp[i+jump][j] += dp_temp;
+            }
+
+            if (j+jump < N) {
+                dp[i][j+jump] += dp_temp;
+            }
         }
-        LIS_exclude.push_back(nums[i].first);
     }
 
-    int LIS_exclude_size = LIS_exclude.size();
-    FOR(i, 0, LIS_exclude_size) {
-        cout << LIS_exclude[i] << endl;
-    }
+    cout << dp[N-1][N-1];
 
     return 0;
 }
