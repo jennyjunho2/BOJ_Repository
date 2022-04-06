@@ -8,6 +8,7 @@ using namespace std;
 using ll = long long;
 //-------------------------------------
 // https://www.acmicpc.net/problem/2568
+// https://far-simple.tistory.com/45
 using p = pair<int, int>;
 int N;
 vector<p> nums;
