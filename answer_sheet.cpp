@@ -7,39 +7,27 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
-int N, M;
-int degree[32001];
-vector<int> graph[32001];
+// https://www.acmicpc.net/problem/15685
+int N;
+int start_y, start_x, dir, generation;
+int graph[101][101];
+int dx[4] = {1, 0, -1, 0};
+int dy[4] = {0, -1, 0, 1};
+
+void dragoncurve(int depth) {
+    if (depth > generation) { return; }
+    if (depth == 0) {
+        continue
+    }
+}
 
 int main() {
     fastio
 
-    cin >> N >> M;
-    FOR(i, 0, M) {
-        int A, B; cin >> A >> B;
-        graph[A].push_back(B);
-        degree[B]++;
-    }
-    
-    priority_queue<int, vector<int>, greater<int>> pq;
-    FOR(i, 1, N+1) {
-        if (degree[i] == 0) {
-            pq.push(i);
-        }
-    }
-
-    while(!pq.empty()) {
-        int node = pq.top();
-        pq.pop();
-        
-        cout << node << ' ';
-
-        for (int next_node: graph[node]) {
-            degree[next_node]--;
-            if (degree[next_node] == 0) {
-                pq.push(next_node);
-            }
-        }
+    cin >> N;
+    FOR(i, 0, N) {
+        cin >> start_x >> start_y >> dir >> generation;
+        dragoncurve(0);
     }
 
     return 0;
