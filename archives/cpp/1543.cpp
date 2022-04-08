@@ -7,12 +7,27 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
-int N, M;
-vector<int> first;
 
 int main() { fastio
 
-    
+    string word, f;
+    getline(cin, word); getline(cin, f);
+    int word_len = word.size();
+    int f_len = f.size();
+    int i = 0;
+
+    int cnt = 0;
+    while(i != word_len) {
+        string temp = word.substr(i, f_len);
+        if (temp == f) {
+            cnt++;
+            i += f_len;
+        } else {
+            i++;
+        }
+    }
+
+    cout << cnt;
 
     return 0;
 }

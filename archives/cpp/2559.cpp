@@ -7,12 +7,27 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
-int N, M;
-vector<int> first;
+int N, K;
+vector<int> nums;
 
 int main() { fastio
 
+    cin >> N >> K;
+    nums.resize(N);
+    FOR(i, 0, N) { cin >> nums[i]; }
+
+    int sum = 0;
+    FOR(i, 0, K) {
+        sum += nums[i];
+    }
     
+    int max_sum = sum;
+    FOR(j, K, N) {
+        sum = sum + nums[j] - nums[j-K];
+        max_sum = max(max_sum, sum);
+    }
+
+    cout << max_sum;
 
     return 0;
 }

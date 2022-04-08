@@ -7,12 +7,24 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
-int N, M;
-vector<int> first;
+int n;
+vector<int> nums;
 
-int main() { fastio
+int main() {
+    fastio
 
-    
+    cin >> n;
+    nums.resize(n);
+    FOR(i, 0, n) { cin >> nums[i]; }
+
+    int max_profit = 0;
+    FOR(i, 0, n-1) {
+        FOR(j, i+1, n) {
+            max_profit = max(max_profit, nums[j] - nums[i]);
+        }
+    }
+
+    cout << max_profit;
 
     return 0;
 }

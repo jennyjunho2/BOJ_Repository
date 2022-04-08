@@ -12,7 +12,19 @@ vector<int> first;
 
 int main() { fastio
 
-    
+    TC {
+        first.clear();
+
+        cin >> N; first.resize(N);
+        FOR(i, 0, N) { cin >> first[i]; }
+        sort(first.begin(), first.end());
+        cin >> M;
+        FOR(i, 0, M) {
+            int temp; cin >> temp;
+             cout << (binary_search(first.begin(), first.end(), temp) ? 1 : 0) << endl;
+        }
+
+    }
 
     return 0;
 }

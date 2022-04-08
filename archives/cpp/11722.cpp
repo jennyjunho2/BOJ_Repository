@@ -7,12 +7,25 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
-int N, M;
-vector<int> first;
+int N;
+int nums[1001];
+int dp[1001];
 
 int main() { fastio
 
-    
+    cin >> N;
+    FOR(i, 0, N) { cin >> nums[i]; }
+    fill(dp, dp+N, 1);
+
+    FOR(i, 0, N) {
+        FOR(j, 0, i) {
+            if (nums[j] > nums[i]) {
+                dp[i] = max(dp[i], dp[j]+1);
+            }
+        }
+    }
+
+    cout << *max_element(dp, dp+N);
 
     return 0;
 }

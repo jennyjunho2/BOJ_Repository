@@ -8,11 +8,20 @@ using namespace std;
 using ll = long long;
 //-------------------------------------
 int N, M;
-vector<int> first;
+vector<int> nums;
 
 int main() { fastio
 
-    
+    cin >> N >> M;
+    nums.resize(N+M);
+    FOR(i, 0, N+M) {
+        cin >> nums[i];
+    }
+
+    sort(nums.begin(), nums.end());
+    for (auto i: nums) {
+        cout << i << ' ';
+    }
 
     return 0;
 }
