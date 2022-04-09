@@ -7,13 +7,12 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
-int N;
 
 int main() { fastio
 
-    cin >> N;
-    bitset<32> num = (N^((~N)+1));
-    cout << num.count();
+    TC {
+        cout << "yes" << endl;
+    }
 
     return 0;
 }
