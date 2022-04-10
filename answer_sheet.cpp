@@ -10,10 +10,7 @@ using ll = long long;
 
 int main() { fastio
 
-    TC {
-        int N; cin >> N;
-        cout << (N+1)/2 * (N+1)/2 << endl;
-    }
+    
 
     return 0;
 }
