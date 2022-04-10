@@ -7,13 +7,23 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
+int N;
+int nums[1000001];
 
 int main() { fastio
 
-    TC {
-        int N; cin >> N;
-        cout << (N+1)/2 * (N+1)/2 << endl;
+    cin >> N;
+    FOR(i, 0, N) { cin >> nums[i]; }
+    sort(nums, nums+N);
+
+    for (int i = N-3; i >= 0; i--) {
+        if (nums[i+2] < nums[i+1] + nums[i]) {
+            cout << nums[i] + nums[i+1] + nums[i+2];
+            return 0;
+        }
     }
+
+    cout << -1;
 
     return 0;
 }
