@@ -8,6 +8,9 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
+int dy[4] = {-1, 1, 0, 0};
+int dx[4] = {0, 0, -1, 1};
+
 
 int main() { fastio
 
