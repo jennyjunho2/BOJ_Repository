@@ -11,7 +11,8 @@ using ll = long long;
 
 int main() { fastio
 
-    
+    int n; cin >> n;
+    cout << n << endl << 1;
 
     return 0;
 }
