@@ -8,10 +8,28 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
+string S;
+
+string sum(string str) {
+    int temp = 0;
+    for (char ch: str) {
+        temp += (ch - '0');
+    }
+    
+    return to_string(temp);
+}
 
 int main() { fastio
 
-    
+    cin >> S;
+    int cnt = 0;
+    while(S.size() > 1) {
+        cnt++;
+        S = sum(S);
+    }
+
+    cout << cnt << endl;
+    cout << (stoi(S)%3 == 0 ? "YES" : "NO");
 
     return 0;
 }
