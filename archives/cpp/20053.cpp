@@ -8,11 +8,20 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
+int N;
+vector<int> nums;
 
 int main() { fastio
 
-    int x, y, z, w; cin >> x >> y >> z >> w;
-    cout << 56*x + 24*y + 14*z + 6*w;
+    TC {
+        nums.clear();
+        cin >> N;
+        nums.resize(N);
+
+        FOR(i, 0, N) { cin >> nums[i]; }
+
+        cout << *min_element(ALL(nums)) << ' ' << *max_element(ALL(nums)) << endl;
+    }
 
     return 0;
 }

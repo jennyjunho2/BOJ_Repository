@@ -8,11 +8,28 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
+ll h[100002];
+ll n; ll ans;
+stack<ll> s;
 
 int main() { fastio
 
-    int x, y, z, w; cin >> x >> y >> z >> w;
-    cout << 56*x + 24*y + 14*z + 6*w;
+    cin >> n;
+    FOR(i, 1, n+1) {
+        cin >> h[i];
+    }
+
+    s.push(0);
+    FOR(i, 1, n+2) {
+        while(!s.empty() && h[s.top()] > h[i]) {
+            ll j = s.top();
+            s.pop();
+            ans = max(ans, h[j]*(i-s.top()-1));
+        }
+        s.push(i);
+    }
+
+    cout << ans;
 
     return 0;
 }
