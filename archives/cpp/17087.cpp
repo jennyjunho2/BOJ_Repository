@@ -8,10 +8,27 @@
 using namespace std;
 using ll = long long;
 //-------------------------------------
+int N, S;
+vector<int> nums;
+
+int gcd(int a, int b) {
+    return b ? gcd(b, a%b) : a;
+}
 
 int main() { fastio
 
-    
+    cin >> N >> S; nums.resize(N);
+    FOR(i, 0, N) {
+        int temp; cin >> temp;
+        nums[i] = abs(temp-S);
+    }
+
+    int total_gcd = nums[0];
+    FOR(i, 1, N) {
+        total_gcd = gcd(total_gcd, nums[i]);
+    }
+
+    cout << total_gcd;
 
     return 0;
 }
